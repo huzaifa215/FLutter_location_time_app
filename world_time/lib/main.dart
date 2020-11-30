@@ -21,12 +21,26 @@ void main() {
           centerTitle: true,
         ),
         body: Center(
-          child:Icon(
-            Icons.favorite,
-            color: Colors.pink,
-            size: 24.0,
-            semanticLabel: 'Text to announce in accessibility modes',
-          ),
+          
+      //     child: IconButton(
+      //       icon: Icon(Icons.android),
+      //       color: Colors.red,
+      //       onPressed: () {},
+      //     ),
+      // //     child: RaisedButton.icon(
+      //     onPressed:(){},
+      //     icon: Icon(
+      //         Icons.mail),
+      //       label: Text('mail me'),
+      //     color: Colors.white,
+      // ),
+
+          // child:Icon(
+          //   Icons.accessible,
+          //   color: Colors.pink,
+          //   size: 24.0,
+          //   semanticLabel: 'Text to announce in accessibility modes',
+          // ),
           // child:Image(
           //   image: NetworkImage('https://images.unsplash.com/photo-1439754389055-9f0855aa82c2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1934&q=80'),
           // ),
@@ -60,7 +74,7 @@ void main() {
     @override
     Widget build(BuildContext context) {
       return SplashScreen(
-        seconds:10,
+        seconds:1,
         backgroundColor: Colors.black,
         loaderColor:Colors.black,
         photoSize:200.0,
