@@ -21,9 +21,15 @@ void main() {
           centerTitle: true,
         ),
         body: Center(
-          child:Image(
-            image: NetworkImage('https://images.unsplash.com/photo-1439754389055-9f0855aa82c2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1934&q=80'),
+          child:Icon(
+            Icons.favorite,
+            color: Colors.pink,
+            size: 24.0,
+            semanticLabel: 'Text to announce in accessibility modes',
           ),
+          // child:Image(
+          //   image: NetworkImage('https://images.unsplash.com/photo-1439754389055-9f0855aa82c2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1934&q=80'),
+          // ),
           // child: Text('Enter the Location', style: TextStyle(
           //   fontStyle: FontStyle.italic,
           //   color: Colors.black87,
