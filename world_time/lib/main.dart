@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 
@@ -12,6 +13,8 @@ void main() {
 
   // Run the code automatically the stless wedgit is used
   class Home extends StatelessWidget {
+  get icon => null;
+
     @override
     Widget build(BuildContext context) {
       return Scaffold( // to divide the screen into portion
@@ -28,17 +31,69 @@ void main() {
             Padding(
               padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
               child:Column(
+
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  Center(
+                  child:CircleAvatar(
+                    backgroundImage: AssetImage('assets/Screenshot (86).png'),
+                    radius: 40.0,
+                  ),
+                  ),
+                  Divider(
+                    height:60.0,
+                        color:Colors.grey,
+                  ),
+                  //SizedBox(height: 200.0),
+
                   Text('Name',
                   style: TextStyle(
                     letterSpacing: 2.0,
                     color: Colors.grey,
-                  ),),
+                  ),
+                  ),
+                  SizedBox(height: 10.0),
                   Text('Huzaifa Khalid',
                     style: TextStyle(
                       letterSpacing: 2.0,
+                      color: Colors.amberAccent[200],
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  SizedBox(height: 10.0),
+                  Text('CNIC_Number',
+                    style: TextStyle(
+                      letterSpacing: 2.0,
                       color: Colors.grey,
-                    ),)
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  Text('32405-0459764-7',
+                    style: TextStyle(
+                       color:Colors.amberAccent[200],
+                      fontSize: 18.0,
+                      letterSpacing: 1.0,
+
+                      ),
+                    ),
+
+                  SizedBox(height: 30.0),
+                  Row(
+                    children: <Widget>[
+                      Icon(
+                        Icons.mail,
+                        color:Colors.grey[400],
+                  ),
+                      SizedBox(width: 10.0),
+                      Text(
+                        'kr75495@gamil.com',
+                        style: TextStyle(
+                          letterSpacing: 2.0,
+                            color:Colors.amberAccent[200],
+                        ),
+                      ),
+    ]
+                  )
                 ],
               )
             )
