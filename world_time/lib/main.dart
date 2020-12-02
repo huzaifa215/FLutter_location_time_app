@@ -14,14 +14,35 @@ void main() {
   class Home extends StatelessWidget {
     @override
     Widget build(BuildContext context) {
-      return Scaffold(
+      return Scaffold( // to divide the screen into portion
+        backgroundColor: Colors.grey[900],
+
         appBar: AppBar(
-          title: Text("World TIme"),
-          backgroundColor: Colors.blueGrey,
+          title: Text("ID card"),
+          backgroundColor: Colors.grey[850],
           centerTitle: true,
+          elevation:0.0 // elevation for removing the shadow
         ),
+
         body:
-            Center(
+            Padding(
+              padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+              child:Column(
+                children: <Widget>[
+                  Text('Name',
+                  style: TextStyle(
+                    letterSpacing: 2.0,
+                    color: Colors.grey,
+                  ),),
+                  Text('Huzaifa Khalid',
+                    style: TextStyle(
+                      letterSpacing: 2.0,
+                      color: Colors.grey,
+                    ),)
+                ],
+              )
+            )
+           // Center(
        // Container(
 
           // constraints: BoxConstraints.expand(
@@ -71,14 +92,14 @@ void main() {
           // )
           // ),
         //),
-            ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Text('Click'),
-          backgroundColor: Colors.blueGrey,
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation
-            .centerFloat, // for the location
+          //  ),
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () {},
+        //   child: Text('Click'),
+        //   backgroundColor: Colors.blueGrey,
+        // ),
+        // floatingActionButtonLocation: FloatingActionButtonLocation
+        //     .centerFloat, // for the location
       );
     }
   }
