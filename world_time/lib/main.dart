@@ -6,6 +6,7 @@ import 'package:splashscreen/splashscreen.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: Home(),
   ),
   ); // run app
@@ -17,7 +18,7 @@ void main() {
 }
 
 class _HomeState extends State<Home> {
-  int increment=1;
+  int increment=0;
       @override
 
     Widget build(BuildContext context) {
