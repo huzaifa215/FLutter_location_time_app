@@ -6,16 +6,20 @@ import 'package:splashscreen/splashscreen.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: MyApp(),
+    home: Home(),
   ),
   ); // run app
 }
-
   // Run the code automatically the stless wedgit is used
-  class Home extends StatelessWidget {
-  get icon => null;
+  class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
 
-    @override
+class _HomeState extends State<Home> {
+  int increment=1;
+      @override
+
     Widget build(BuildContext context) {
       return Scaffold( // to divide the screen into portion
         backgroundColor: Colors.grey[900],
@@ -26,6 +30,16 @@ void main() {
           centerTitle: true,
           elevation:0.0 // elevation for removing the shadow
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            setState(() {
+              increment++;
+            });
+
+          },
+          child:Icon(Icons.add),
+          backgroundColor: Colors.grey[800],
+          ),
 
         body:
             Padding(
@@ -54,6 +68,21 @@ void main() {
                   ),
                   SizedBox(height: 10.0),
                   Text('Huzaifa Khalid',
+                    style: TextStyle(
+                      letterSpacing: 2.0,
+                      color: Colors.amberAccent[200],
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  Text('Current Number',
+                    style: TextStyle(
+                      letterSpacing: 2.0,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  Text(
+                    '$increment',
                     style: TextStyle(
                       letterSpacing: 2.0,
                       color: Colors.amberAccent[200],
@@ -156,8 +185,22 @@ void main() {
         // floatingActionButtonLocation: FloatingActionButtonLocation
         //     .centerFloat, // for the location
       );
+
+    }
+}
+  
+  class Test extends StatefulWidget {
+    @override
+    _TestState createState() => _TestState();
+  }
+  
+  class _TestState extends State<Test> {
+    @override
+    Widget build(BuildContext context) {
+      return Container();
     }
   }
+  
 
   // for the styling or aneemation
   class MyApp extends StatefulWidget {
@@ -167,6 +210,7 @@ void main() {
   
   class _MyAppState extends State<MyApp> {
     @override
+
     Widget build(BuildContext context) {
       return SplashScreen(
         seconds:1,
