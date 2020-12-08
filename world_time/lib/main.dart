@@ -4,6 +4,55 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home:QuoteList(),
+  ));
+
+}
+//changing data on runtime so
+class QuoteList extends StatefulWidget {
+
+  @override
+  _QuoteListState createState() => _QuoteListState();
+}
+
+class _QuoteListState extends State<QuoteList> {
+  List<String> quotes=[
+    'My name is huzaifa Khalid',
+    'I am a student of Computere Science',
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey,
+      appBar: AppBar(
+        title: Text('Qoutes'),
+        centerTitle: true,
+        backgroundColor: Colors.grey[800],
+      ),
+      body:Column(
+        children: quotes.map((qoute) {
+          return Text(qoute);
+        }).toList(),
+      )
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // void main() {
 //   runApp(MaterialApp(
@@ -191,18 +240,18 @@ import 'package:splashscreen/splashscreen.dart';
 //     }
 // }
   
-  class Test extends StatefulWidget {
-    @override
-    _TestState createState() => _TestState();
-  }
-  
-  class _TestState extends State<Test> {
-    @override
-    Widget build(BuildContext context) {
-      return Container();
-    }
-  }
-  
+  // class Test extends StatefulWidget {
+  //   @override
+  //   _TestState createState() => _TestState();
+  // }
+  //
+  // class _TestState extends State<Test> {
+  //   @override
+  //   Widget build(BuildContext context) {
+  //     return Container();
+  //   }
+  // }
+  //
 
   // for the styling or aneemation
   // class MyApp extends StatefulWidget {
