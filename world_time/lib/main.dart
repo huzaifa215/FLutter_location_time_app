@@ -4,131 +4,132 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 
-void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: Home(),
-  ),
-  ); // run app
-}
-  // Run the code automatically the stless wedgit is used
-  class Home extends StatefulWidget {
-  @override
-  _HomeState createState() => _HomeState();
-}
 
-class _HomeState extends State<Home> {
-  int increment=0;
-      @override
-
-    Widget build(BuildContext context) {
-      return Scaffold( // to divide the screen into portion
-        backgroundColor: Colors.grey[900],
-
-        appBar: AppBar(
-          title: Text("ID card"),
-          backgroundColor: Colors.grey[850],
-          centerTitle: true,
-          elevation:0.0 // elevation for removing the shadow
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: (){
-            setState(() {
-              increment++;
-            });
-
-          },
-          child:Icon(Icons.add),
-          backgroundColor: Colors.grey[800],
-          ),
-
-        body:
-            Padding(
-              padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
-              child:Column(
-
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Center(
-                  child:CircleAvatar(
-                    backgroundImage: AssetImage('assets/Screenshot (86).png'),
-                    radius: 40.0,
-                  ),
-                  ),
-                  Divider(
-                    height:60.0,
-                        color:Colors.grey,
-                  ),
-                  //SizedBox(height: 200.0),
-
-                  Text('Name',
-                  style: TextStyle(
-                    letterSpacing: 2.0,
-                    color: Colors.grey,
-                  ),
-                  ),
-                  SizedBox(height: 10.0),
-                  Text('Huzaifa Khalid',
-                    style: TextStyle(
-                      letterSpacing: 2.0,
-                      color: Colors.amberAccent[200],
-                    ),
-                  ),
-                  SizedBox(height: 10.0),
-                  Text('Current Number',
-                    style: TextStyle(
-                      letterSpacing: 2.0,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  SizedBox(height: 10.0),
-                  Text(
-                    '$increment',
-                    style: TextStyle(
-                      letterSpacing: 2.0,
-                      color: Colors.amberAccent[200],
-                    ),
-                  ),
-                  SizedBox(height: 10.0),
-                  SizedBox(height: 10.0),
-                  Text('CNIC_Number',
-                    style: TextStyle(
-                      letterSpacing: 2.0,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  SizedBox(height: 10.0),
-                  Text('32405-0459764-7',
-                    style: TextStyle(
-                       color:Colors.amberAccent[200],
-                      fontSize: 18.0,
-                      letterSpacing: 1.0,
-
-                      ),
-                    ),
-
-                  SizedBox(height: 30.0),
-                  Row(
-                    children: <Widget>[
-                      Icon(
-                        Icons.mail,
-                        color:Colors.grey[400],
-                  ),
-                      SizedBox(width: 10.0),
-                      Text(
-                        'kr75495@gamil.com',
-                        style: TextStyle(
-                          letterSpacing: 2.0,
-                            color:Colors.amberAccent[200],
-                        ),
-                      ),
-    ]
-                  )
-                ],
-              )
-            )
-           // Center(
-       // Container(
+// void main() {
+//   runApp(MaterialApp(
+//     debugShowCheckedModeBanner: false,
+//     home: Home(),
+//   ),
+//   ); // run app
+// }
+//   // Run the code automatically the stless wedgit is used
+//   class Home extends StatefulWidget {
+//   @override
+//   _HomeState createState() => _HomeState();
+// }
+//
+// class _HomeState extends State<Home> {
+//   int increment=0;
+//       @override
+//
+//     Widget build(BuildContext context) {
+//       return Scaffold( // to divide the screen into portion
+//         backgroundColor: Colors.grey[900],
+//
+//         appBar: AppBar(
+//           title: Text("ID card"),
+//           backgroundColor: Colors.grey[850],
+//           centerTitle: true,
+//           elevation:0.0 // elevation for removing the shadow
+//         ),
+//         floatingActionButton: FloatingActionButton(
+//           onPressed: (){
+//             setState(() {
+//               increment++;
+//             });
+//
+//           },
+//           child:Icon(Icons.add),
+//           backgroundColor: Colors.grey[800],
+//           ),
+//
+//         body:
+//             Padding(
+//               padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+//               child:Column(
+//
+//                 crossAxisAlignment: CrossAxisAlignment.start,
+//                 children: <Widget>[
+//                   Center(
+//                   child:CircleAvatar(
+//                     backgroundImage: AssetImage('assets/Screenshot (86).png'),
+//                     radius: 40.0,
+//                   ),
+//                   ),
+//                   Divider(
+//                     height:60.0,
+//                         color:Colors.grey,
+//                   ),
+//                   //SizedBox(height: 200.0),
+//
+//                   Text('Name',
+//                   style: TextStyle(
+//                     letterSpacing: 2.0,
+//                     color: Colors.grey,
+//                   ),
+//                   ),
+//                   SizedBox(height: 10.0),
+//                   Text('Huzaifa Khalid',
+//                     style: TextStyle(
+//                       letterSpacing: 2.0,
+//                       color: Colors.amberAccent[200],
+//                     ),
+//                   ),
+//                   SizedBox(height: 10.0),
+//                   Text('Current Number',
+//                     style: TextStyle(
+//                       letterSpacing: 2.0,
+//                       color: Colors.grey,
+//                     ),
+//                   ),
+//                   SizedBox(height: 10.0),
+//                   Text(
+//                     '$increment',
+//                     style: TextStyle(
+//                       letterSpacing: 2.0,
+//                       color: Colors.amberAccent[200],
+//                     ),
+//                   ),
+//                   SizedBox(height: 10.0),
+//                   SizedBox(height: 10.0),
+//                   Text('CNIC_Number',
+//                     style: TextStyle(
+//                       letterSpacing: 2.0,
+//                       color: Colors.grey,
+//                     ),
+//                   ),
+//                   SizedBox(height: 10.0),
+//                   Text('32405-0459764-7',
+//                     style: TextStyle(
+//                        color:Colors.amberAccent[200],
+//                       fontSize: 18.0,
+//                       letterSpacing: 1.0,
+//
+//                       ),
+//                     ),
+//
+//                   SizedBox(height: 30.0),
+//                   Row(
+//                     children: <Widget>[
+//                       Icon(
+//                         Icons.mail,
+//                         color:Colors.grey[400],
+//                   ),
+//                       SizedBox(width: 10.0),
+//                       Text(
+//                         'kr75495@gamil.com',
+//                         style: TextStyle(
+//                           letterSpacing: 2.0,
+//                             color:Colors.amberAccent[200],
+//                         ),
+//                       ),
+//     ]
+//                   )
+//                 ],
+//               )
+//             )
+//            // Center(
+//        // Container(
 
           // constraints: BoxConstraints.expand(
           //   height: Theme.of(context).textTheme.headline4.fontSize * 1.1 + 200.0,
@@ -185,10 +186,10 @@ class _HomeState extends State<Home> {
         // ),
         // floatingActionButtonLocation: FloatingActionButtonLocation
         //     .centerFloat, // for the location
-      );
-
-    }
-}
+//       );
+//
+//     }
+// }
   
   class Test extends StatefulWidget {
     @override
@@ -204,25 +205,25 @@ class _HomeState extends State<Home> {
   
 
   // for the styling or aneemation
-  class MyApp extends StatefulWidget {
-    @override
-    _MyAppState createState() => _MyAppState();
-  }
-  
-  class _MyAppState extends State<MyApp> {
-    @override
-
-    Widget build(BuildContext context) {
-      return SplashScreen(
-        seconds:1,
-        backgroundColor: Colors.black,
-        loaderColor:Colors.black,
-        photoSize:200.0,
-        image: Image.asset('assets/loading.gif'),
-        navigateAfterSeconds: Home(),// to run seperate screen
-      );
-    }
-  }
-
+  // class MyApp extends StatefulWidget {
+  //   @override
+  //   _MyAppState createState() => _MyAppState();
+  // }
+  //
+  // class _MyAppState extends State<MyApp> {
+  //   @override
+  //
+  //   Widget build(BuildContext context) {
+  //     return SplashScreen(
+  //       seconds:1,
+  //       backgroundColor: Colors.black,
+  //       loaderColor:Colors.black,
+  //       photoSize:200.0,
+  //       image: Image.asset('assets/loading.gif'),
+  //       navigateAfterSeconds: Home(),// to run seperate screen
+  //     );
+  //   }
+  // }
+  //
 
 
