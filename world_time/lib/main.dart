@@ -7,52 +7,127 @@ import 'package:splashscreen/splashscreen.dart';
 void main(){
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home:QuoteList(),
+    home:,
   ));
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //changing data on runtime so
-class QuoteList extends StatefulWidget {
-
-  @override
-  _QuoteListState createState() => _QuoteListState();
-}
-
-class _QuoteListState extends State<QuoteList> {
-  List<String> quotes=[
-    'My name is huzaifa Khalid',
-    'I am a student of Computere Science',
-  ];
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey,
-      appBar: AppBar(
-        title: Text('Qoutes'),
-        centerTitle: true,
-        backgroundColor: Colors.grey[800],
-      ),
-      body:Column(
-        children: quotes.map((qoute) {
-          return Text(qoute);
-        }).toList(),
-      )
-    );
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+// class QuoteList extends StatefulWidget {
+//
+//   @override
+//   _QuoteListState createState() => _QuoteListState();
+// }
+//
+// class _QuoteListState extends State<QuoteList> {
+//   List<String> quotes=[
+//     'My name is huzaifa Khalid',
+//     'I am a student of Computere Science',
+//   ];
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.grey,
+//       appBar: AppBar(
+//         title: Text('Qoutes'),
+//         centerTitle: true,
+//         backgroundColor: Colors.grey[800],
+//       ),
+//       body:Column(
+//         children: quotes.map((qoute) {// map is equal to foreach for traversing the data
+//           return Text(qoute);
+//         }).toList(),
+//       )
+//     );
+//   }
+// }
+//
+//
 
 // void main() {
 //   runApp(MaterialApp(
