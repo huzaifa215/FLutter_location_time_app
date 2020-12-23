@@ -276,4 +276,11 @@ void initState() {
   // }
   //
 
+   // Response response=await get('https://jsonplaceholder.typicode.com/todos/1');// get teh data from jason jason data
+      // // response data type get the responese freom that url
+      // Map data=jsonDecode(response.body); // json decode used to covert string dta into a use full from
+      // //MAP is equal to HaahMap
+      // print (data);
+      // print(data['title']);
+
 
