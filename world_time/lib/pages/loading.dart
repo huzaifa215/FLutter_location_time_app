@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:world_time/services/world_time.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import'package:http/http.dart';
 //jason decode
 import 'dart:convert';
@@ -9,15 +10,15 @@ class Loading extends StatefulWidget {
   _LoadingState createState() => _LoadingState();
 }
 class _LoadingState extends State<Loading> {
-
   //String time='Loading';
   void setupWorldTime() async{
-    WorldTime worldTime= WorldTime(location: 'Berlin',flag:'germany.png',url: 'Europe/Berlin');
+    WorldTime worldTime= WorldTime(location: 'Lahore',flag:'pakistan.png',url: 'Asia/Karachi');//Europe/Berlin');
     await worldTime.getTime();
     Navigator.pushReplacementNamed(context, '/home',arguments: {// argumants act as a map send map with keys and value to the next screen or route
         'location':worldTime.location,
       'flag': worldTime.flag,
-      'time':worldTime.time
+      'time':worldTime.time,
+      'isDayTime':worldTime.daytime
     });
     // print(worldTime.time);
     // setState(() {
@@ -33,13 +34,20 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(
-        title: Text('Loading'),
+      backgroundColor: Colors.black12,
+      body: Center(
+        child: SpinKitDoubleBounce(
+          color: Colors.white,
+          size: 80.0,
+        ),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(50.0),
-        child: Text("Loading"),
-      ),
+      // appBar:AppBar(
+      //   title: Text('Loading'),
+      // ),
+      // body: Padding(
+      //   padding: EdgeInsets.all(50.0),
+      //   child: Text("Loading"),
+      // ),
     );
   }
 }

@@ -7,6 +7,7 @@ class WorldTime{
   String url;// the url like asia/pakistan
   String time;//the time of that location
   String flag;// the flag of that country
+  bool daytime;
 
   WorldTime({this.location,this.flag,this.url});// constructor
   // futur is a keyword that act as apromise or a placeholder taht this fuction will complete perform than tha other come
@@ -19,6 +20,7 @@ class WorldTime{
       // get properties from data
       String datetime=data['datetime'];
       String offset=data['utc_offset'].substring(1,3);
+
       //  print(datetime);
       // print(offset);
       //create an date time obj
@@ -26,7 +28,10 @@ class WorldTime{
       now=now.add(Duration(hours:int.parse(offset)));
       // convert the now to the string
       // time=now.toString();
+      daytime=now.hour>6 && now.hour<20 ? true:false;
+
       time = DateFormat.jm().format(now);
+
     }catch(e){
       print('Caught error:$e');
       time='could not get time date';
