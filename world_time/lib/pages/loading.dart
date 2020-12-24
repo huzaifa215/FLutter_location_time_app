@@ -10,10 +10,19 @@ class Loading extends StatefulWidget {
 }
 class _LoadingState extends State<Loading> {
 
+  //String time='Loading';
   void setupWorldTime() async{
-    WorldTime worldTime= WorldTime(location: 'Berlin',flag: 'germany.png',url: 'Europe/Berlin');
+    WorldTime worldTime= WorldTime(location: 'Berlin',flag:'germany.png',url: 'Europe/Berlin');
     await worldTime.getTime();
-    print(worldTime.time);
+    Navigator.pushReplacementNamed(context, '/home',arguments: {// argumants act as a map send map with keys and value to the next screen or route
+        'location':worldTime.location,
+      'flag': worldTime.flag,
+      'time':worldTime.time
+    });
+    // print(worldTime.time);
+    // setState(() {
+    //   time=worldTime.time;
+    // });
   }
   @override
   void initState() {
@@ -26,6 +35,10 @@ class _LoadingState extends State<Loading> {
     return Scaffold(
       appBar:AppBar(
         title: Text('Loading'),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(50.0),
+        child: Text("Loading"),
       ),
     );
   }

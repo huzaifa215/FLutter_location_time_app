@@ -8,7 +8,7 @@ void main(){
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     // routes
-    initialRoute:'/',  // from which the screeen strt
+    initialRoute:'/home',  // from which the screeen strt
       routes:{
       '/':(context)=>Loading(),
       '/home':(context)=>Home(),
