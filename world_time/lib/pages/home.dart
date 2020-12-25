@@ -14,10 +14,11 @@ class _HomeState extends State<Home> {
     // set background
     // this code match the condition if true than day.png else night.png
     String bgimage=data['isDayTime']? 'day1.jpg':'night.jpg';
+    Color bgcolor=data['isDayTime']? Colors.green[800] : Colors.black12;
     return Scaffold(
       appBar:AppBar(
         title: Text('Home Screen'),
-        backgroundColor: Colors.black12,
+        backgroundColor: bgcolor,
       ),
       body: SafeArea(
 
@@ -37,8 +38,12 @@ class _HomeState extends State<Home> {
                   //navigator that push data from 1 to other route
                   Navigator.pushNamed(context, '/location');
                 },
-                icon:Icon(Icons.edit_location),
-                  label: Text('Edit Location'),
+                icon:Icon(
+                  Icons.edit_location,
+                  color: Colors.grey[200],
+                ),
+                  label: Text('Edit Location',
+                  style: TextStyle(),),
                 ),
                 SizedBox(height: 20.0),
                 Row(
