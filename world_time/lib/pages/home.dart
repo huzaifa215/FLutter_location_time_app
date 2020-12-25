@@ -9,7 +9,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     // loading page se argument wale data ko yaa pe pkrn he
-    data=ModalRoute.of(context).settings.arguments;
+    data= data.isNotEmpty? data : ModalRoute.of(context).settings.arguments;
    // print (data);
     // set background
     // this code match the condition if true than day.png else night.png
@@ -34,9 +34,17 @@ class _HomeState extends State<Home> {
             child: Column(
               children: <Widget>[
                 FlatButton.icon(
-                onPressed:(){
+                onPressed:() async {
                   //navigator that push data from 1 to other route
-                  Navigator.pushNamed(context, '/location');
+                  dynamic result= await Navigator.pushNamed(context, '/location');
+                  setState(() {
+                    data={
+                      'time':result['time'],
+                      'location':result['location'],
+                      'isDayTime':result['isDayTime'],
+                      'flag':result['flag']
+                    };
+                  });
                 },
                 icon:Icon(
                   Icons.edit_location,

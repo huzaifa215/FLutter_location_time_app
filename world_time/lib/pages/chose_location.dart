@@ -17,6 +17,21 @@ class _ChoseLocationState extends State<ChoseLocation> {
     WorldTime(url:'Asia/Seoul',location: 'Seoul',flag: 'south_korea.png'),
     WorldTime(url:' Asia/Jakarta',location: 'Jakarta',flag: 'indonesia.png'),
   ];
+// get the data from the list index by index
+  void UpdateTime(index) async{
+      WorldTime instance=locations[index];
+      await instance.getTime();
+      // navigation to home screen
+    //push to new screen
+    // pop to back the screen
+      // pop jahan hm yahn se data back push kr rahe hen hm is ko wahan pakren ge jahan se is ko push kia tha
+    Navigator.pop(context,{
+      'location':instance.location,
+      'flag': instance.flag,
+      'time':instance.time,
+      'isDayTime':instance.daytime,
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,18 +45,21 @@ class _ChoseLocationState extends State<ChoseLocation> {
       body: ListView.builder(
         itemCount: locations.length,
         itemBuilder: (context,index){
-        return Card(
-          child: ListTile(
-            onTap: (){// like on pressed method
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 1.0,horizontal: 4.0),
+          child: Card(
+            child: ListTile(
+              onTap: (){// like on pressed method
+                UpdateTime(index);
+              },
+              title: Text(locations[index].location),
+              leading:CircleAvatar(
+              backgroundImage: AssetImage('assets/${locations[index].flag}'),
+              ) ,// circle Avater round image// means keh ye sb se pehle ai ge us kolead kare ge
+            ),
 
-            },
-            title: Text(locations[index].location),
-            leading:CircleAvatar(
-            backgroundImage: AssetImage('assets/${locations[index].flag}'),
-            ) ,// circle Avater round image// means keh ye sb se pehle ai ge us kolead kare ge
-          ),
-
-    );
+    ),
+        );
         },
       ),
     );
