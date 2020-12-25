@@ -28,7 +28,7 @@ class WorldTime{
       now=now.add(Duration(hours:int.parse(offset)));
       // convert the now to the string
       // time=now.toString();
-      daytime=now.hour>6 && now.hour<6 ? true:false;
+      daytime=now.hour>6 && now.hour<20 ? true:false;
 
       time = DateFormat.jm().format(now);
 
